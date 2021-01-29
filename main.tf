@@ -6,9 +6,7 @@ resource "aws_instance" "web" {
   ami                    = var.image_id
   instance_type          = var.instance_type
   vpc_security_group_ids = ["${aws_security_group.web.id}"]
-  user_data              = "${file("template/user_data.sh")}"
-
-  
+  user_data              = "${file("template/user_data.sh")}" 
 }
 
 resource "aws_security_group" "web" {
